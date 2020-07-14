@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xml:lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ <title>Document </title>
+ </head>
+
+<style>
+
+.table1 table {
+	width:100%;
+	border:50px;
+	margin:30px ;
+}
+.table1,.table1 th,.table1 td
+{
+	font-size:1;
+	text-align:center;
+	padding:4px;
+	border:1px solid #dddddd;
+	border-collapse:collapse
+}
+.table1 th {
+	background-color:hsla(0,100%,80%);
+	color:white;
+}
+.table1 tr:nth-child(odd){
+	background-color:pink;
+}
+.table1 tr:nth-child(even){
+	background-color:white;
+}
+
+
+a:link {text-decoration:none} 
+li{ list-style-type:none;} 
+.menu li{
+float:center; 
+}
+.menu a{
+width:300px;
+font-size:12px;
+display:block;
+height:40px;
+line-height:50px; /*글자와 위치 조정 */
+background-color:beige; 
+color:black;
+margin:1px;
+}
+.menu a:hover { /*클릭 후 메뉴*/
+background-color:pink;
+color:blue;
+}
+
+h3.tit { 
+	top: 300px;
+  width: 600px;
+  padding: 10px;
+  border: 5px solid hsla(0,100%,80%);
+  margin: 10px;
+  background-color:hsla(0,100%,90%,25%); 
+}
+
+/*
+hsla는 hsla(hue,saturation,lightness)로
+hsla(색조,채도,명도)를 말한다. 적절히 조합해서 색을 만들었다.
+*/
+</style>
+<script src="c:/js/jquery.js"> </script>
+ <script src="c:/js/jquery-migrate-1.4.1.js"> </script>
+<script type="text/javascript">
+
+function Time(){
+
+var time = setInterval(interval1,1000);
+var time2 = setInterval(interval2,2000);
+
+function interval1()
+{
+	$(function(){
+		$(".tit").css("color","#0040FF");
+		});
+}
+function interval2()
+{
+	$(function(){
+		$(".tit").css("color","red");
+		});
+}
+}
+
+
+function schedule_table(){
+var i=0;
+var arr = new Array();
+var subject = "0";
+while(1)
+{
+	subject = prompt("과목명을 입력하세요","0");
+	if(subject == null) break;
+	arr.push(subject);	
+	
+}
+var i;
+var j;
+
+var mon = new Array();
+for(i=0; i<arr.length; i++){
+	mon[i] = arr[Math.floor(Math.random()*arr.length)];
+for(j=0; j<i; j++)
+{
+	if(mon[i] == mon[j]) 
+	//i의 배열과 같으면 i--한 후 배열의 값이 다를때만 mon에 넣음
+	{
+		i--;
+		break;
+	}
+}
+}
+
+var tue = new Array();
+for(i=0; i<arr.length; i++){
+	tue[i] = arr[Math.floor(Math.random()*arr.length)];
+for(j=0; j<i; j++)
+{
+	if(tue[i] == tue[j])
+	{
+		i--;
+		break;
+	}
+}
+}
+
+var wed = new Array();
+for(i=0; i<arr.length; i++){
+	wed[i] = arr[Math.floor(Math.random()*arr.length)];
+for(j=0; j<i; j++)
+{
+	if(wed[i] == wed[j])
+	{
+		i--;
+		break;
+	}
+}
+}
+
+var thu = new Array();
+for(i=0; i<arr.length; i++){
+	thu[i] = arr[Math.floor(Math.random()*arr.length)];
+for(j=0; j<i; j++)
+{
+	if(thu[i] == thu[j])
+	{
+		i--;
+		break;
+	}
+}
+}
+
+var fri = new Array();
+for(i=0; i<arr.length; i++){
+	fri[i] = arr[Math.floor(Math.random()*arr.length)];
+for(j=0; j<i; j++)
+{
+	if(fri[i] == fri[j])
+	{
+		i--;
+		break;
+	}
+}
+}
+
+document.write("<div align='center'>");
+document.write("<table class=table1>");
+document.write("<th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>"); 
+
+for(i=0;i<arr.length;i++)
+{
+	document.write("<tr><td>"+mon[i]+"</td><td>"+tue[i]+"</td> <td>"+wed[i]+"</td><td>"+thu[i]+"</td><td>"+fri[i]+"</td></tr>");
+}
+
+document.write("</table>");
+document.write("</div>");
+
+}//schedule_table
+
+function f1(){
+text_array = new Array("할 수 있는 자는 행한다. 할 수 없는 자는 가르친다.","어떤 것을 완전히 알려거든 그것을 다른이에게 가르쳐라","10분 뒤와 10년 뒤를 동시에 생각하라", "일 분 전만큼 먼 시간은 없다", "할 수 없을 것 같은 일을 하라. 실패하라","시간은 금이다.");
+var text = text_array[Math.floor(Math.random()*text_array.length)];
+document.write("<h3 class = 'tit'>" +text+"</h3><p>");
+}
+
+document.write("<div align='center'><p>");
+document.write("<h2>Scheduler</h2> <hr><p><p>");
+
+schedule_table();
+f1();
+Time();
+
+document.write("</div>");
+</script>
+
+<body>
+<p>
+
+<div align="center">
+<ul class="menu">
+	<li><a href="운영체제.html">운영체제</a><li>
+	<li><a href="데이터베이스.html">데이터베이스</a><li>
+	<li><a href="컴퓨터네트워크.html">컴퓨터네트워크</a><li>
+	<li><a href="소프트웨어실습.html">소프트웨어실습</a><li>
+	<li><a href="수치해석.html">수치해석</a><li>
+	<li><a href="프로그래밍언어론.html">프로그래밍언어론</a></li>
+</ul>
+</div>
+
+</body>
+</html>

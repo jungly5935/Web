@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xml:lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ <title>Document </title>
+ </head>
+<style>
+body {
+background-color:beige;
+text-align:center;
+}
+
+hr {
+width:800px;
+border:1px solid skyblue;
+}
+
+li {
+background-color:pink;
+width:400px;
+height:200px;
+list-style:none;
+}
+
+textarea{
+width:400px;
+height:300px;
+}
+
+.btn{ 
+
+background-color:orange;
+color:white;
+border:white;
+font-size:18px;
+border-radius:10px 10px 10px 10px;
+}
+.btn:hover{ 
+
+background-color:skyblue;
+color:white;
+border:white;
+border-radius:10px 10px 10px 10px;
+}
+
+#table1{
+position:absolute;
+display:none;
+text-align:center;
+left:40%;
+top:75%;
+color:white;
+border:1px solid black;
+background-color:skyblue;
+}
+</style>
+
+
+<script src="c:/js/jquery.js"> </script>
+ <script src="c:/js/jquery-migrate-1.4.1.js"> </script>
+<script type="text/javascript">
+
+function input_text(){
+
+	var a=document.getElementById("message").value;
+	$("#demo").text(a);
+	
+}
+
+function memo(){
+	$(function (){
+	$("#demo").css("background-color","orange");
+	$("#demo").css("color","white");
+	$("#demo").css("border","3px solid white");
+		});
+}
+function info(){ //정보 넣기
+
+var con = document.getElementById("table1");
+
+if(con.style.display=='none'){ //숨겨져있던 테이블 표시
+	con.style.display='block';
+	}
+else{
+	con.style.display='none';
+	}
+
+}
+</script>
+ <body>
+ <div align="center">
+<h2>운영체제</h2>
+<hr>
+</div>
+<p id="demo"></p>
+<div align="center">
+<table id="table1" align="center" border="1">
+<th>과목명 </th> <th>담당교수</th> <th> 이수구분 </th> <th>학점</th> <th>분반</th> 
+<tr><td>운영체제<td>허성우</td><td>전공필수</td><td>3학점</td><td>2분반</td>
+</tr>
+
+</table>
+</div>
+<h4>메모를 입력해주세요!</h4>
+<textarea id = "message"> </textarea>
+<br>
+<input type="button" class="btn" value="메모" onclick="input_text()">
+<input type="button" class="btn" value="스타일추가" onclick="memo()">
+<input type="button" class="btn" value="운영체제 정보보기" onclick="info();">
+<p>
+
+
+ </body>
+</html>
